@@ -1,23 +1,24 @@
 import React, { useEffect, useState } from "react";
 // import { useParams } from "react-router";
-import CoinTable from './CoinTable'
+import CoinTable from "./CoinTable";
+import Header from "./CoinListHeader";
 
-const coinURL = "https://api.coinlore.net/api/tickers/";
+// const coinURL = "https://api.coinlore.net/api/tickers/";
 
-function CoinList() {
-  const [coinList, setCoinList] = useState();
+function CoinList(props) {
+  // const [coinList, setCoinList] = useState();
 
-  useEffect(() => {
-    fetch(coinURL)
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        throw new Error("Bad Response");
-      })
-      .then((data) => setCoinList(data.data),)
-      .catch((error) => console.error(error));
-  }, [coinList]);
+  // useEffect(() => {
+  //   fetch(coinURL)
+  //     .then((res) => {
+  //       if (res.ok) {
+  //         return res.json();
+  //       }
+  //       throw new Error("Bad Response");
+  //     })
+  //     .then((data) => setCoinList(data.data),)
+  //     .catch((error) => console.error(error));
+  // }, [coinList]);
 
   // const list = coinList?.map((data, index) => {
   //   if (data.percent_change_24h < 0){
@@ -44,19 +45,11 @@ function CoinList() {
   //   );
   // }});
 
-
   return (
     <table>
-      <tr>
-        <th>Rank</th>
-        <th>Name</th>
-        <th>Symbol</th>
-        <th>Price(USD)</th>
-        <th>Price(BTC)</th>
-        <th>+/- 24h(%)</th>
-      </tr>
+      <Header />
       {/* {list} */}
-      <CoinTable data={coinList}/>
+      <CoinTable data={props.data} />
     </table>
   );
 }
