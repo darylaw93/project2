@@ -1,4 +1,3 @@
-import { queryAllByDisplayValue } from "@testing-library/react";
 import React, { useEffect, useState } from "react";
 // import { useParams } from "react-router";
 
@@ -17,7 +16,7 @@ function CoinList() {
       })
       .then((data) => setCoinList(data.data))
       .catch((error) => console.error(error));
-  }, []);
+  }, [coinList]);
 
   const list = coinList?.map((data, index) => {
     return (
@@ -38,7 +37,7 @@ function CoinList() {
         <th>Name</th>
         <th>Symbol</th>
         <th>Price(USD)</th>
-        <th>Price Change 24hr(%)</th>
+        <th>+/- 24h(%)</th>
       </tr>
       {list}
     </table>
