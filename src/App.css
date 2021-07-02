@@ -47,7 +47,27 @@ main {
   height: 100%;
 }
 
+table {
+  width: 100%;
+}
+
 table, th, td {
   border: 1px solid black;
-  text-align: left;
+}
+
+table, th, td {
+  text-align: center;
+
+}
+
+.negative {
+  color: red;
+}
+
+.positive {
+  color: green;
+}
+
+.btc {
+  font-size: 15px;
 }
