@@ -1,17 +1,17 @@
-import React from "react"
+import React from "react";
 
 const Header = () => {
-    return (      
+  return (
     <tr>
-        <th>Rank</th>
-        <th>Name</th>
-        <th>Symbol</th>
-        <th>Price(USD)</th>
-        <th>Price(BTC)</th>
-        <th>+/- 24h(%)</th>
-        <th>Market Cap(USD)</th>
+      <th className="cryptoTable">Rank</th>
+      <th className="cryptoTable">Name</th>
+      <th className="cryptoTable"> Symbol</th>
+      <th className="cryptoTable">Price(USD)</th>
+      <th className="cryptoTable">+/- 24h(%)</th>
+      <th className="cryptoTable">Volume(24h)</th>
+      <th className="cryptoTable">Market Cap(USD)</th>
     </tr>
-      )
-}
+  );
+};
 
-export default Header
+export default Header;

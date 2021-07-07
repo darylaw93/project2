@@ -2,15 +2,18 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import CoinList from "./components/CoinList";
 import { Route, Link, Redirect, Switch } from "react-router-dom";
-import Home from "./components/Home";
 import MarketCap from "./components/MarketCap";
+import Coin from "./components/Coin"
 
-const coinURL = "https://api.coinlore.net/api/tickers/";
+
+
+const coinURL = "https://api.nomics.com/v1/currencies/ticker?key=90cbf49ed7f5579b5b8c18dc354c3749d20705c9&ids=&interval=&convert=USD&per-page=100&page=1";
 const mcapURL = "https://api.coinlore.net/api/global/";
 
 function App() {
   const [coinList, setCoinList] = useState();
   const [marketCap, setMarketCap] = useState(0);
+  const [map, setMap] = useState()
 
   useEffect(() => {
     fetch(coinURL)
@@ -20,9 +23,9 @@ function App() {
         }
         throw new Error("Bad Response");
       })
-      .then((data) => setCoinList(data.data))
+      .then((data) => setCoinList(data))
       .catch((error) => console.error(error));
-  }, [coinList]);
+  }, []);
 
   useEffect(() => {
     fetch(mcapURL)
@@ -34,7 +37,9 @@ function App() {
       })
       .then((data) => setMarketCap(data[0]))
       .catch((error) => console.error(error));
-  }, [marketCap]);
+  }, []);
+
+
 
   return (
     <div className="App">
@@ -48,7 +53,10 @@ function App() {
         <MarketCap data={marketCap} />
         <Switch>
           <Route exact path="/">
-            <CoinList data={coinList} />
+            <CoinList data={coinList}/>
+          </Route>
+          <Route path ="/id/:id">
+            <Coin />
           </Route>
           <Route path="/"></Route>
           <Redirect to="/" />

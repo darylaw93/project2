@@ -2,11 +2,11 @@ import React  from "react";
 
 function MarketCap(props) {
     return (
-        <table>
-        <td>
+        <table className="cryptoTable">
+        <td className="cryptoTable">
           Total Marketcap: ${(props?.data?.total_mcap)?.toLocaleString()}
         </td>
-        <td>Total Market Volume: ${(props?.data?.total_volume)?.toLocaleString()}
+        <td className="cryptoTable">Total Market Volume (24H): ${(props?.data?.total_volume)?.toLocaleString()}
         </td>
       </table>
     );
