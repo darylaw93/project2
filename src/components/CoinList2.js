@@ -1,5 +1,5 @@
 import React from "react";
-import CoinTable from "./CoinTable";
+import CoinTable2 from "./CoinTable2";
 import Header from "./CoinListHeader";
 import { Link } from "react-router-dom";
 
@@ -8,11 +8,11 @@ function CoinList(props) {
     <>
       <table className="cryptoTable">
         <Header />
-        <CoinTable data={props.data} />
+        <CoinTable2 data={props.data} />
       </table>
-      <span className="right">
-        <Link to="/page2">
-          Next 100
+      <span className="left">
+        <Link to="/">
+          Prev 100
         </Link>
       </span>
     </>

@@ -5,6 +5,7 @@ body {
   font-size: 14pt;
   width: 100vw;
   height: 100vh;
+  background-image: url("https://store-images.s-microsoft.com/image/apps.15160.14439434818564022.3318c674-5d77-439f-a11b-5f9c9ebb2aa3.5d9b6e54-e872-4c9d-87ab-b87faaa40eb8?mode=scale&q=90&h=1080&w=1920");
 }
 
 nav {
@@ -49,6 +50,7 @@ main {
 
 table{
   width: 100%;
+  background-color: white;
 }
 
 .cryptoTable {
@@ -65,11 +67,17 @@ th, td {
 
 tr:hover {
   background-color: #f5f5f5;
-
+}
+a{
+color: inherit
 }
 
 a:link {
   text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
 }
 
 .logo {
@@ -101,4 +109,31 @@ a:link {
 
 .coinsInfo {
   border: 1px solid black;
+}
+
+.name{
+  text-align: left;
+  padding-left: 30px;
+  width: 180px;
+  font-size: 17px;
+}
+
+.right {
+  border: 1px solid black;
+  float: right;
+}
+
+#rightp {
+  display: inline-block;
+  margin: auto;
+}
+
+#left {
+  display: inline-block;
+  margin: auto;
+}
+
+.left {
+  border: 1px solid black;
+  float: left;
 }

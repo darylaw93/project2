@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const CoinTable = (props) => {
+const CoinTable2 = (props) => {
   const List = props.data;
+  console.log(List)
   if (List === undefined) {
     return "Loading...";
   } else {
@@ -80,4 +81,4 @@ const CoinTable = (props) => {
   }
 };
 
-export default CoinTable;
+export default CoinTable2;
