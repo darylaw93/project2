@@ -4,11 +4,12 @@ import CoinList from "./components/CoinList";
 import CoinList2 from "./components/CoinList2";
 import { Route, Link, Redirect, Switch } from "react-router-dom";
 import MarketCap from "./components/MarketCap";
-import Coin from "./components/Coin"
+import Coin from "./components/Coin";
 
-
-const coinURL = "https://api.nomics.com/v1/currencies/ticker?key=90cbf49ed7f5579b5b8c18dc354c3749d20705c9&ids=&interval=&convert=USD&per-page=100&page=1";
-const coinURL2 = "https://api.nomics.com/v1/currencies/ticker?key=90cbf49ed7f5579b5b8c18dc354c3749d20705c9&ids=&interval=&convert=USD&per-page=100&page=2";
+const coinURL =
+  "https://api.nomics.com/v1/currencies/ticker?key=90cbf49ed7f5579b5b8c18dc354c3749d20705c9&ids=&interval=&convert=USD&per-page=100&page=1";
+const coinURL2 =
+  "https://api.nomics.com/v1/currencies/ticker?key=90cbf49ed7f5579b5b8c18dc354c3749d20705c9&ids=&interval=&convert=USD&per-page=100&page=2";
 const mcapURL = "https://api.coinlore.net/api/global/";
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
       })
       .then((data) => setCoinList(data))
       .catch((error) => console.error(error));
-  }, [coinURL]);
+  }, [setCoinList]);
 
   useEffect(() => {
     fetch(coinURL2)
@@ -38,7 +39,7 @@ function App() {
       })
       .then((data) => setCoinList2(data))
       .catch((error) => console.error(error));
-  }, [coinURL2]);
+  }, [setCoinList2]);
 
   useEffect(() => {
     fetch(mcapURL)
@@ -50,10 +51,7 @@ function App() {
       })
       .then((data) => setMarketCap(data[0]))
       .catch((error) => console.error(error));
-  }, [mcapURL]);
-
-
-
+  }, [setMarketCap]);
 
   return (
     <div className="App">
@@ -64,19 +62,18 @@ function App() {
         <MarketCap data={marketCap} />
       </nav>
       <main>
-        
         <Switch>
           <Route exact path="/">
-            <CoinList data={coinList}/>
+            <CoinList data={coinList} />
           </Route>
           <Route path="/page2">
-            <CoinList2 data={coinList2}/>
+            <CoinList2 data={coinList2} />
           </Route>
-          <Route path ="/id/:id/:name">
+          <Route path="/id/:id/:name">
             <Coin />
           </Route>
           <Redirect to="/" />
-          </Switch>
+        </Switch>
       </main>
     </div>
   );
