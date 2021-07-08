@@ -26,9 +26,8 @@ function App() {
 //  })
 
 
-
   useEffect(() => {
-    fetch(coinURL, {method: "GET", headers:{"Accept": "application/json"}})
+    fetch(coinURL, {method: "GET", headers: {Accept: "application/json", "Content-Type": "application/json"}})
       .then((res) => {
         if (res.ok) {
           return res.json().then(json => json);
@@ -41,7 +40,7 @@ function App() {
   console.log(coinList)
 
   useEffect(() => {
-    fetch(coinURL2, {method: "GET",headers:{"Accept": "application/json"}})
+    fetch(coinURL2, {method: "GET", headers: {"Accept": "application/json"}})
       .then((res) => {
         if (res.ok) {
           return res.json();
