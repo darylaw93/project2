@@ -13,7 +13,7 @@ const Coin = () => {
   const coinInfoURL = `https://api.coingecko.com/api/v3/coins/${name}?tickers=true&market_data=true&community_data=false&developer_data=false`;
 
   useEffect(() => {
-    fetch(coinURL)
+    fetch(coinURL, {mode: 'no-cors'})
       .then((res) => {
         if (res.ok) {
           return res.json();
