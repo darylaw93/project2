@@ -9,8 +9,8 @@ const Coin = () => {
   const id = params.id;
   const name = params.name.toLowerCase();
 
-  const coinURL = `https://api.nomics.com/v1/currencies/ticker?key=90cbf49ed7f5579b5b8c18dc354c3749d20705c9&ids=${id}&interval=&convert=USD&per-page=100&page=1`;
-  const coinInfoURL = `https://api.coingecko.com/api/v3/coins/${name}?tickers=true&market_data=true&community_data=false&developer_data=false`;
+  const coinURL =`https://api.nomics.com/v1/currencies/ticker?key=90cbf49ed7f5579b5b8c18dc354c3749d20705c9&ids=${id}&interval=&convert=USD&per-page=100&page=1`;
+  const coinInfoURL =`https://api.coingecko.com/api/v3/coins/${name}?tickers=true&market_data=true&community_data=false&developer_data=false`;
 
   useEffect(() => {
     fetch(coinURL)
@@ -22,7 +22,8 @@ const Coin = () => {
       })
       .then((data) => setCoin(data[0]))
       .catch((error) => console.log(error));
-  }, []);
+      // eslint-disable-next-line
+  }, [coin]);
 
   useEffect(() => {
     fetch(coinInfoURL)
@@ -34,7 +35,8 @@ const Coin = () => {
       })
       .then((data) => setCoinInfo(data))
       .catch((error) => console.log(error));
-  }, []);
+      // eslint-disable-next-line
+  }, [coinInfo]);
 
   if (coin === undefined || coinInfo === undefined) {
     return "Loading...";

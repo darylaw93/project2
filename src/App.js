@@ -6,10 +6,8 @@ import { Route, Link, Redirect, Switch } from "react-router-dom";
 import MarketCap from "./components/MarketCap";
 import Coin from "./components/Coin";
 
-const coinURL =
-  "https://api.nomics.com/v1/currencies/ticker?key=90cbf49ed7f5579b5b8c18dc354c3749d20705c9&ids=&interval=&convert=USD&per-page=100&page=1";
-const coinURL2 =
-  "https://api.nomics.com/v1/currencies/ticker?key=90cbf49ed7f5579b5b8c18dc354c3749d20705c9&ids=&interval=&convert=USD&per-page=100&page=2";
+const coinURL ="https://api.nomics.com/v1/currencies/ticker?key=90cbf49ed7f5579b5b8c18dc354c3749d20705c9&ids=&interval=&convert=USD&per-page=100&page=1";
+const coinURL2 ="https://api.nomics.com/v1/currencies/ticker?key=90cbf49ed7f5579b5b8c18dc354c3749d20705c9&ids=&interval=&convert=USD&per-page=100&page=2";
 const mcapURL = "https://api.coinlore.net/api/global/";
 
 function App() {
