@@ -18,7 +18,7 @@ function App() {
   const [marketCap, setMarketCap] = useState(0);
 
   useEffect(() => {
-    fetch(coinURL, {mode: 'no-cors'})
+    fetch(coinURL)
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -30,7 +30,7 @@ function App() {
   }, [setCoinList]);
 
   useEffect(() => {
-    fetch(coinURL2, {mode: 'no-cors'})
+    fetch(coinURL2)
       .then((res) => {
         if (res.ok) {
           return res.json();

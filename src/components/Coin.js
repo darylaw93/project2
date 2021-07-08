@@ -13,7 +13,7 @@ const Coin = () => {
   const coinInfoURL = `https://api.coingecko.com/api/v3/coins/${name}?tickers=true&market_data=true&community_data=false&developer_data=false`;
 
   useEffect(() => {
-    fetch(coinURL, {mode: 'no-cors'})
+    fetch(coinURL)
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -22,7 +22,7 @@ const Coin = () => {
       })
       .then((data) => setCoin(data[0]))
       .catch((error) => console.log(error));
-  }, [coinURL]);
+  }, [setCoin]);
 
   useEffect(() => {
     fetch(coinInfoURL)
@@ -34,7 +34,7 @@ const Coin = () => {
       })
       .then((data) => setCoinInfo(data))
       .catch((error) => console.log(error));
-  }, [coinInfoURL]);
+  }, [setCoinInfo]);
 
   if (coin === undefined || coinInfo === undefined) {
     return "Loading...";
