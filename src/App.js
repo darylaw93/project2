@@ -16,7 +16,7 @@ function App() {
   const [marketCap, setMarketCap] = useState(0);
 
   useEffect(() => {
-    fetch(coinURL)
+    fetch(coinURL, {mode: "cors"})
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -25,7 +25,7 @@ function App() {
       })
       .then((data) => setCoinList(data))
       .catch((error) => console.error(error));
-  }, [setCoinList]);
+  },[setCoinList]);
 
   console.log(coinList)
 

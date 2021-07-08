@@ -4,6 +4,7 @@ import Header from "./CoinListHeader";
 import { Link } from "react-router-dom";
 
 function CoinList(props) {
+  console.log(props)
   return (
     <>
       <table className="cryptoTable">
