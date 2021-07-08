@@ -47,8 +47,9 @@ const Coin = () => {
             {coin.name}({coin.symbol})
           </h1>
           <div id="center">Price(USD) (+/-%)</div>
-          <h2 id="center">${coin.price}
-          <CoinPercentage data={coin} />
+          <h2 id="center">
+            ${coin.price}
+            <CoinPercentage data={coin} />
           </h2>
         </div>
         <table className="CoinsInfo">
@@ -89,10 +90,11 @@ const Coin = () => {
             <img src={coin.logo_url} alt="" className="coinLogo"></img>
             {coin.name} ({coin.symbol})
           </h1>
-        <div>Price(USD) (+/-%)</div>
-        <h2 id="center">${parseFloat(coin.price).toLocaleString()}
-        <CoinPercentage data={coin} /> 
-        </h2>
+          <div>Price(USD) (+/-%)</div>
+          <h2 id="center">
+            ${parseFloat(coin.price).toLocaleString()}
+            <CoinPercentage data={coin} />
+          </h2>
         </div>
         <table className="CoinsInfo">
           <tr>
