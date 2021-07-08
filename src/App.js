@@ -28,7 +28,7 @@ function App() {
   //  })
 
   useEffect(() => {
-    fetch(coinURL, { method: "GET", headers: { Accept: "application/json", 'Content-Type': "text/plain" } })
+    fetch(coinURL, { mode: "cors", method: "GET", headers: { Accept: "application/json", 'Content-Type': "text/plain"} })
       .then((res) => {
         if (res.ok) {
           return res.json();
