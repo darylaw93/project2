@@ -10,6 +10,8 @@ Technical Used
 - React
 - React-DOM
 
+Wire Frame
+https://i.imgur.com/wdQ8MB8h.jpg
 
 Unsolved problems
 APIs can't be called in the vercel build unfortuantely, and after exhausting multiple options and builds, I've decided to leave it for another occasion but I'll definitely be finishing this.
