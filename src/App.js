@@ -28,7 +28,7 @@ function App() {
   //  })
 
   useEffect(() => {
-    fetch(coinURL, { method: "GET", headers: { Accept: "application/json" } })
+    fetch(coinURL, { method: "GET", headers: { Accept: "application/json", 'Content-Type': "text/plain" } })
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -42,7 +42,7 @@ function App() {
       }
     })
       .catch((error) => console.error(error));
-  }, [coinList]);
+  }, [setCoinList]);
 
   console.log(coinList);
 
