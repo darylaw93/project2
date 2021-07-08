@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import CoinList from "./components/CoinList";
 import CoinList2 from "./components/CoinList2";
-import { Route, Link, Redirect, Switch, StaticRouter } from "react-router-dom";
+import { Route, Link, Redirect, Switch} from "react-router-dom";
 import MarketCap from "./components/MarketCap";
 import Coin from "./components/Coin";
 
@@ -42,7 +42,7 @@ function App() {
       }
     })
       .catch((error) => console.error(error));
-  }, [CoinList]);
+  }, [coinList]);
 
   console.log(coinList);
 
