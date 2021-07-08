@@ -55,6 +55,7 @@ table{
 
 .cryptoTable {
   border: 1px solid black;
+  color: black;
 }
 
 table, th, td {
@@ -105,6 +106,7 @@ a:hover{
 
 .coins {
   text-align: center;
+  background-color: white;
 }
 
 .coinsInfo {
@@ -121,6 +123,7 @@ a:hover{
 .right {
   border: 1px solid black;
   float: right;
+  background-color: white;
 }
 
 #rightp {
@@ -128,7 +131,7 @@ a:hover{
   margin: auto;
 }
 
-#left {
+#leftp {
   display: inline-block;
   margin: auto;
 }
@@ -136,4 +139,22 @@ a:hover{
 .left {
   border: 1px solid black;
   float: left;
+  background-color: white;
+}
+
+.coinsL {
+  display: inline-block;
+  width: 50%;
+  background-color: white;
+}
+
+.coinsR {
+  display: inline-block;
+  width: 50%;
+  background-color: white;
+}
+
+.box {
+  background-color: grey;
+  margin: 100px;
 }

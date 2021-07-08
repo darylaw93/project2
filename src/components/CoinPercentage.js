@@ -4,15 +4,15 @@ const CoinPercentage = (props) => {
   const coins = props.data;
   if (coins["1d"].price_change_pct > 0) {
     return (
-      <h3 className="positive" id="rightp">
+      <h5 className="positive" id="rightp">
          ↑{(coins["1d"].price_change_pct * 100).toFixed(2)}%
-      </h3>
+      </h5>
     );
   } else {
     return (
-      <h3 className="negative" id="rightp">
+      <h5 className="negative" id="rightp">
         ↓{(coins["1d"].price_change_pct * 100).toFixed(2)}%
-      </h3>
+      </h5>
     );
   }
 };

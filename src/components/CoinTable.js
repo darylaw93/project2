@@ -10,19 +10,19 @@ const CoinTable = (props) => {
       const marketcap = parseInt(data.market_cap).toLocaleString();
       const percent = (data["1d"].price_change_pct * 100).toFixed(2);
       const volume = parseInt(data["1d"].volume);
-      const price = data.price.toLocaleString()
+      const price = data.price.toLocaleString();
       if (percent < 0 && price > 0.01) {
         return (
           <tr className="cryptoTable">
             <td>{data.rank}</td>
             <td className="name">
-              <Link to={"/id/" + data.id}>
+              <Link to={`/id/${data.id}/${data.name}`}>
                 <img src={data.logo_url} className="logo"></img> {data.name}
               </Link>
             </td>
             <td index={index}>{data.symbol}</td>
             <td>${parseFloat(price).toFixed(2)}</td>
-            <td className="negative">↓{(percent)}%</td>
+            <td className="negative">↓{percent}%</td>
             <td>${volume.toLocaleString()}</td>
             <td>${marketcap}</td>
           </tr>
@@ -32,7 +32,7 @@ const CoinTable = (props) => {
           <tr className="cryptoTable">
             <td>{data.rank}</td>
             <td className="name">
-              <Link to={"/id/" + data.id}>
+              <Link to={`/id/${data.id}/${data.name}`}>
                 <img src={data.logo_url} className="logo"></img> {data.name}
               </Link>
             </td>
@@ -43,38 +43,38 @@ const CoinTable = (props) => {
             <td>${marketcap}</td>
           </tr>
         );
-      } else if ((percent < 0 && price < 0.01))
-       { return (
-        <tr className="cryptoTable">
-        <td>{data.rank}</td>
-        <td className="name">
-          <Link to={"/id/" + data.id}>
-            <img src={data.logo_url} className="logo"></img> {data.name}
-          </Link>
-        </td>
-        <td index={index}>{data.symbol}</td>
-        <td>${price}</td>
-        <td className="negative">↓{percent}%</td>
-        <td>${volume.toLocaleString()}</td>
-        <td>${marketcap}</td>
-      </tr>
-      )
+      } else if (percent < 0 && price < 0.01) {
+        return (
+          <tr className="cryptoTable">
+            <td>{data.rank}</td>
+            <td className="name">
+              <Link to={`/id/${data.id}/${data.name}`}>
+                <img src={data.logo_url} className="logo"></img> {data.name}
+              </Link>
+            </td>
+            <td index={index}>{data.symbol}</td>
+            <td>${price}</td>
+            <td className="negative">↓{percent}%</td>
+            <td>${volume.toLocaleString()}</td>
+            <td>${marketcap}</td>
+          </tr>
+        );
       } else {
         return (
-            <tr className="cryptoTable">
-              <td>{data.rank}</td>
-              <td className="name">
-                <Link to={"/id/" + data.id}>
-                  <img src={data.logo_url} className="logo"></img> {data.name}
-                </Link>
-              </td>
-              <td index={index}>{data.symbol}</td>
-              <td>${price}</td>
-              <td className="positive">↑{percent}%</td>
-              <td>${volume.toLocaleString()}</td>
-              <td>${marketcap}</td>
-            </tr>
-        )
+          <tr className="cryptoTable">
+            <td>{data.rank}</td>
+            <td className="name">
+              <Link to={`/id/${data.id}/${data.name}`}>
+                <img src={data.logo_url} className="logo"></img> {data.name}
+              </Link>
+            </td>
+            <td index={index}>{data.symbol}</td>
+            <td>${price}</td>
+            <td className="positive">↑{percent}%</td>
+            <td>${volume.toLocaleString()}</td>
+            <td>${marketcap}</td>
+          </tr>
+        );
       }
     });
   }

@@ -26,7 +26,7 @@ function App() {
       })
       .then((data) => setCoinList(data))
       .catch((error) => console.error(error));
-  }, [coinList]);
+  }, [coinURL]);
 
   useEffect(() => {
     fetch(coinURL2)
@@ -38,7 +38,7 @@ function App() {
       })
       .then((data) => setCoinList2(data))
       .catch((error) => console.error(error));
-  }, [coinList2]);
+  }, [coinURL2]);
 
   useEffect(() => {
     fetch(mcapURL)
@@ -50,7 +50,7 @@ function App() {
       })
       .then((data) => setMarketCap(data[0]))
       .catch((error) => console.error(error));
-  }, []);
+  }, [mcapURL]);
 
 
 
@@ -61,10 +61,10 @@ function App() {
         <Link to="/">
           <h1>Cryptocurrencies</h1>
         </Link>
-
+        <MarketCap data={marketCap} />
       </nav>
       <main>
-        <MarketCap data={marketCap} />
+        
         <Switch>
           <Route exact path="/">
             <CoinList data={coinList}/>
@@ -72,7 +72,7 @@ function App() {
           <Route path="/page2">
             <CoinList2 data={coinList2}/>
           </Route>
-          <Route path ="/id/:id">
+          <Route path ="/id/:id/:name">
             <Coin />
           </Route>
           <Redirect to="/" />

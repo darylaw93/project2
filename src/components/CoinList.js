@@ -12,7 +12,7 @@ function CoinList(props) {
       </table>
       <span className="right">
         <Link to="/page2">
-          Next 100
+        Next 100 →
         </Link>
       </span>
     </>

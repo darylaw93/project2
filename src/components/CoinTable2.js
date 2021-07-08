@@ -17,7 +17,7 @@ const CoinTable2 = (props) => {
           <tr className="cryptoTable">
             <td>{data.rank}</td>
             <td className="name">
-              <Link to={"/id/" + data.id}>
+              <Link to={`/id/${data.id}/${data.name}`}>
                 <img src={data.logo_url} className="logo"></img> {data.name}
               </Link>
             </td>
@@ -33,7 +33,7 @@ const CoinTable2 = (props) => {
           <tr className="cryptoTable">
             <td>{data.rank}</td>
             <td className="name">
-              <Link to={"/id/" + data.id}>
+              <Link to={`/id/${data.id}/${data.name}`}>
                 <img src={data.logo_url} className="logo"></img> {data.name}
               </Link>
             </td>
@@ -49,7 +49,7 @@ const CoinTable2 = (props) => {
         <tr className="cryptoTable">
         <td>{data.rank}</td>
         <td className="name">
-          <Link to={"/id/" + data.id}>
+          <Link to={`/id/${data.id}/${data.name}`}>
             <img src={data.logo_url} className="logo"></img> {data.name}
           </Link>
         </td>
@@ -65,7 +65,7 @@ const CoinTable2 = (props) => {
             <tr className="cryptoTable">
               <td>{data.rank}</td>
               <td className="name">
-                <Link to={"/id/" + data.id}>
+                <Link to={`/id/${data.id}/${data.name}`}>
                   <img src={data.logo_url} className="logo"></img> {data.name}
                 </Link>
               </td>
