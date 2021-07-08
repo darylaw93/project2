@@ -6,8 +6,10 @@ import { Route, Link, Redirect, Switch } from "react-router-dom";
 import MarketCap from "./components/MarketCap";
 import Coin from "./components/Coin";
 
-const coinURL ="https://api.nomics.com/v1/currencies/ticker?key=90cbf49ed7f5579b5b8c18dc354c3749d20705c9&ids=&interval=&convert=USD&per-page=100&page=1";
-const coinURL2 ="https://api.nomics.com/v1/currencies/ticker?key=90cbf49ed7f5579b5b8c18dc354c3749d20705c9&ids=&interval=&convert=USD&per-page=100&page=2";
+const coinURL =
+  "https://api.nomics.com/v1/currencies/ticker?key=90cbf49ed7f5579b5b8c18dc354c3749d20705c9&ids=&interval=&convert=USD&per-page=100&page=1";
+const coinURL2 =
+  "https://api.nomics.com/v1/currencies/ticker?key=90cbf49ed7f5579b5b8c18dc354c3749d20705c9&ids=&interval=&convert=USD&per-page=100&page=2";
 const mcapURL = "https://api.coinlore.net/api/global/";
 
 function App() {
@@ -15,32 +17,31 @@ function App() {
   const [coinList2, setCoinList2] = useState();
   const [marketCap, setMarketCap] = useState(0);
 
-//  async function fetchMoviesJSON() {
-//    const respose = await fetch(coinURL, {mode: "no-cors"})
-//    const movies = await respose.json();
-//    return console.log(movies)
-//  }
+  //  async function fetchMoviesJSON() {
+  //    const respose = await fetch(coinURL, {mode: "no-cors"})
+  //    const movies = await respose.json();
+  //    return console.log(movies)
+  //  }
 
-//  fetchMoviesJSON().then(movies => {
-//    console.log(movies)
-//  })
-
+  //  fetchMoviesJSON().then(movies => {
+  //    console.log(movies)
+  //  })
 
   useEffect(() => {
-    fetch(coinURL, {method: "GET", headers: {Accept: "application/json", "Content-Type": "application/json"}})
+    fetch(coinURL)
       .then((res) => {
         if (res.ok) {
-          return res.json().then(json => json);
+          return res.json().then((json) => json);
         }
       })
       .then((data) => setCoinList(data))
       .catch((error) => console.error(error));
-  },[setCoinList]);
+  }, [setCoinList]);
 
-  console.log(coinList)
+  console.log(coinList);
 
   useEffect(() => {
-    fetch(coinURL2, {method: "GET", headers: {"Accept": "application/json"}})
+    fetch(coinURL2, { method: "GET", headers: { Accept: "application/json" } })
       .then((res) => {
         if (res.ok) {
           return res.json();
