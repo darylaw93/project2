@@ -15,13 +15,24 @@ function App() {
   const [coinList2, setCoinList2] = useState();
   const [marketCap, setMarketCap] = useState(0);
 
+//  async function fetchMoviesJSON() {
+//    const respose = await fetch(coinURL, {mode: "no-cors"})
+//    const movies = await respose.json();
+//    return console.log(movies)
+//  }
+
+//  fetchMoviesJSON().then(movies => {
+//    console.log(movies)
+//  })
+
+
+
   useEffect(() => {
-    fetch(coinURL, {mode: "no-cors"})
+    fetch(coinURL, {headers:{"Accept": "application/json"}})
       .then((res) => {
         if (res.ok) {
-          return res.json();
+          return res.json().then(json => json);
         }
-        throw new Error("Bad Response");
       })
       .then((data) => setCoinList(data))
       .catch((error) => console.error(error));
@@ -30,7 +41,7 @@ function App() {
   console.log(coinList)
 
   useEffect(() => {
-    fetch(coinURL2, {mode: "no-cors"})
+    fetch(coinURL2, {headers:{"Accept": "application/json"}})
       .then((res) => {
         if (res.ok) {
           return res.json();
