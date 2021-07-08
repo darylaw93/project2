@@ -43,7 +43,7 @@ const Coin = () => {
       <div>
         <div className="coinsL">
           <h1>
-            <img src={coin.logo_url} className="coinLogo"></img>
+            <img src={coin.logo_url} alt="" className="coinLogo"></img>
             {coin.name}({coin.symbol})
           </h1>
           <div id="center">Price(USD) (+/-%)</div>
@@ -86,7 +86,7 @@ const Coin = () => {
       <div>
         <div className="coins">
           <h1>
-            <img src={coin.logo_url} className="coinLogo"></img>
+            <img src={coin.logo_url} alt="" className="coinLogo"></img>
             {coin.name} ({coin.symbol})
           </h1>
         <div>Price(USD) (+/-%)</div>
