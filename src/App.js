@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import CoinList from "./components/CoinList";
 import CoinList2 from "./components/CoinList2";
-import { Route, Link, Redirect, Switch} from "react-router-dom";
+import { Route, Link, Redirect, Switch } from "react-router-dom";
 import MarketCap from "./components/MarketCap";
 import Coin from "./components/Coin";
 
@@ -17,18 +17,8 @@ function App() {
   const [coinList2, setCoinList2] = useState();
   const [marketCap, setMarketCap] = useState(0);
 
-  //  async function fetchMoviesJSON() {
-  //    const respose = await fetch(coinURL, {mode: "no-cors"})
-  //    const movies = await respose.json();
-  //    return console.log(movies)
-  //  }
-
-  //  fetchMoviesJSON().then(movies => {
-  //    console.log(movies)
-  //  })
-
   useEffect(() => {
-    fetch(coinURL, { mode: "cors", method: "GET", headers: { Accept: "application/json", 'Content-Type': "text/plain"} })
+    fetch(coinURL)
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -36,18 +26,18 @@ function App() {
       })
       .then((data) => {
         if (data === undefined) {
-         return "Loading.."
-        }else{
-        return setCoinList(data)
-      }
-    })
+          return "Loading..";
+        } else {
+          return setCoinList(data);
+        }
+      })
       .catch((error) => console.error(error));
   }, [setCoinList]);
 
   console.log(coinList);
 
   useEffect(() => {
-    fetch(coinURL2, { method: "GET", headers: { Accept: "application/json" } })
+    fetch(coinURL2)
       .then((res) => {
         if (res.ok) {
           return res.json();
