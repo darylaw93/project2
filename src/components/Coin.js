@@ -22,7 +22,7 @@ const Coin = () => {
       })
       .then((data) => setCoin(data[0]))
       .catch((error) => console.log(error));
-  }, [setCoin]);
+  }, []);
 
   useEffect(() => {
     fetch(coinInfoURL)
@@ -34,7 +34,7 @@ const Coin = () => {
       })
       .then((data) => setCoinInfo(data))
       .catch((error) => console.log(error));
-  }, [setCoinInfo]);
+  }, []);
 
   if (coin === undefined || coinInfo === undefined) {
     return "Loading...";
