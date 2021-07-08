@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import CoinList from "./components/CoinList";
 import CoinList2 from "./components/CoinList2";
-import { Route, Link, Redirect, Switch } from "react-router-dom";
+import { Route, Link, Redirect, Switch, StaticRouter } from "react-router-dom";
 import MarketCap from "./components/MarketCap";
 import Coin from "./components/Coin";
 
@@ -28,15 +28,21 @@ function App() {
   //  })
 
   useEffect(() => {
-    fetch(coinURL)
+    fetch(coinURL, { method: "GET", headers: { Accept: "application/json" } })
       .then((res) => {
         if (res.ok) {
-          return res.json().then((json) => json);
+          return res.json();
         }
       })
-      .then((data) => setCoinList(data))
+      .then((data) => {
+        if (data === undefined) {
+         return "Loading.."
+        }else{
+        return setCoinList(data)
+      }
+    })
       .catch((error) => console.error(error));
-  }, [setCoinList]);
+  }, [CoinList]);
 
   console.log(coinList);
 
