@@ -1,6 +1,7 @@
 API Project - Cryptocurrency List
 
 Description
+
 A simple project that requires an API fetch. My project is my take on a simple top Crypto list with basic information and price movements.
 
 Technical Used
