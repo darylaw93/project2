@@ -29,4 +29,9 @@ The base API for my project, contains an all the information and images needed f
 
 Coingecko API
 
-A supplement to my API that helped with plugging the gaps in certain areas of the project.
+Improvements in the future
+
+Real time updating of price movements
+GRAPHS
+Exchange Information
+Currency Converter 
